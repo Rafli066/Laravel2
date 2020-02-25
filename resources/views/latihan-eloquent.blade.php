@@ -7,6 +7,7 @@
     <title>Latihan Eloquent</title>
 </head>
 <body>
+    @include('layouts.nav')
     @foreach ($tgs as $data)
         <h3>{{$data->nama}}--<small>[{{$data->nim}}]</small></h3>
         <h5>Hobi :

@@ -53,16 +53,53 @@ Route::get('eloquent', function () {
 });
 
 
-//Route Eloquent Latihan
-// Route::get('latihan-eloquent', function () {
-//     $tgs = Mahasiswa::with('wali', 'dosen', 'hobi')->get();
-//     return view('latihan-eloquent', compact('tgs'));
-// });
-
 Route::get('latihan-eloquent', function () {
-    $tgs = DB::table('mahasiswas')
-        ->select('mahasiswas.nama', 'walis.nama as nama_wali', 'dosens.nama as nama_dosen', 'dosens.nipd',
-                'mahasiswas.hobi as id_hobi')
-        ->join('walis', 'walis.id_mahasiswa', '=', 'mahasiswas.id')
-        ->join('dosens', 'dosens.id_mahasiswa', '=', 'mahasiswas.id')->get();
+    $tgs = Mahasiswa::with('wali','dosen','hobi')->take(1)->get();
+    return view('latihan-eloquent', compact('tgs'));
 });
+
+/////////////////////////////////////////////////////////////////////////////////
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+//ROUTE BLADE TEMPLATE
+Route::get('beranda', function () {
+    return view('beranda');
+});
+Route::get('kontak', function () {
+    return view('kontak');
+});
+Route::get('tentang', function () {
+    return view('tentang');
+});
+
+//Route CRUD
+Route::resource('dosen', 'DosenController');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
