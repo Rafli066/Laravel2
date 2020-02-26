@@ -25,7 +25,7 @@ class DosenController extends Controller
         $dosen->nama = $request->nama;
         $dosen->nipd = $request->nipd;
         $dosen->save();
-        return redirect()->router('dosen.index')->with(['message' => 'Dosen Berhasil Dibuat']);
+        return redirect()->route('dosen.index')->with(['message' => 'Dosen Berhasil Dibuat']);
     }
 
     public function show($id)
