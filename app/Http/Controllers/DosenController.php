@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 class DosenController extends Controller
 {
 
+
+    public function __construct () {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $dosen = Dosen::all();
@@ -55,4 +60,5 @@ class DosenController extends Controller
         return redirect()->route('dosen.index')->with(['message' => 'Dosen Berhasil Dihapus']);
 
     }
+
 }

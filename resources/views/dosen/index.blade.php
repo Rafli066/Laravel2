@@ -37,9 +37,13 @@
                                         <td>{{$data->nama}}</td>
                                         <td>{{$data->nipd}}</td>
                                         <td>
-                                            <a href="{{route('dosen.show',$data->id)}}" class="btn btn-warning">Show</a> |
-                                            <a href="{{route('dosen.edit',$data->id)}}" class="btn btn-primary">Edit</a> |
-                                            <a href="{{route('dosen.destroy',$data->id)}}" class="btn btn-danger">Delete</a>
+                                            <form action="{{route('dosen.destroy',$data->id)}}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <a href="{{route('dosen.show',$data->id)}}" class="btn btn-warning">Show</a> |
+                                                <a href="{{route('dosen.edit',$data->id)}}" class="btn btn-primary">Edit</a> |
+                                                <button type="submit" class="btn btn-danger">Delete</button>
+                                            </form>
                                         </td>
                                     </tr>
                                     @endforeach
