@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header"><b>DASHBOARD</b></div>
+                <div class="card-header"><b>HALAMAN UTAMA</b></div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -13,7 +13,8 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                        Selamat Datang !
+                        Wilujeung Sumping ! <br>
+                        Mangga Logi-in Heula.
                 </div>
             </div>
         </div>

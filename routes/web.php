@@ -77,6 +77,9 @@ Route::get('tentang', function () {
 //Route CRUD
 Route::resource('dosen', 'DosenController');
 
+Route::resource('hobi', 'HobiController');
+
+Route::resource('mahasiswa', 'MahasiswaController');
 
 
 

@@ -12,10 +12,10 @@
                             {{ session('message') }}
                         </div>
                         @endif
-                        <b>DATA DOSEN</b>
-                        <a href="{{route('dosen.create')}}"
+                        <b>DATA HOBI</b>
+                        <a href="{{route('hobi.create')}}"
                            class="float-right">
-                            Tambah Data
+                            Tambah Data Hobi
                         </a>
                     </div>
                     <div class="card-body">
@@ -24,24 +24,22 @@
                                 <thead>
                                     <tr>
                                         <th>NO</th>
-                                        <th>NAMA</th>
-                                        <th>NIPD</th>
+                                        <th>NAMA HOBI</th>
                                         <th>A K S I</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @php $no = 1; @endphp
-                                    @foreach ($dosen as $data)
+                                    @foreach ($hobi as $data)
                                     <tr>
                                         <td>{{$no++}}</td>
-                                        <td>{{$data->nama}}</td>
-                                        <td>{{$data->nipd}}</td>
+                                        <td>{{$data->hobi}}</td>
                                         <td>
-                                            <form action="{{route('dosen.destroy',$data->id)}}" method="POST">
+                                            <form action="{{route('hobi.destroy',$data->id)}}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
-                                                <a href="{{route('dosen.show',$data->id)}}" class="btn btn-warning">Show</a> |
-                                                <a href="{{route('dosen.edit',$data->id)}}" class="btn btn-primary">Edit</a> |
+                                                <a href="{{route('hobi.show',$data->id)}}" class="btn btn-warning">Show</a> |
+                                                <a href="{{route('hobi.edit',$data->id)}}" class="btn btn-primary">Edit</a> |
                                                 <button type="submit" onclick="return confirm('Apakah Anda Yakin ?')" class="btn btn-danger">Delete</button>
                                             </form>
                                         </td>
