@@ -42,13 +42,15 @@ class MahasiswaController extends Controller
 
     public function edit($id)
     {
+        $dosen = Dosen::all();
         $mahasiswa = Mahasiswa::findOrFail($id);
-        return view('mahasiswa.edit', compact('mahasiswa'));
+        return view('mahasiswa.edit', compact('mahasiswa','dosen'));
     }
 
     public function update(Request $request, $id)
     {
-        $mahasiswa = Mahasiswa::findOrFind($id);
+
+        $mahasiswa = Mahasiswa::findOrFail($id);
         $mahasiswa->nama = $request->nama;
         $mahasiswa->nim = $request->nim;
         $mahasiswa->id_dosen = $request->id_dosen;

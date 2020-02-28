@@ -16,7 +16,7 @@
                                     <input type="text" name="hobi" class="form-control" required>
                                 </div>
                                 <div class="form-group">
-                                    <button type="submit" class="btn-btn-primary">SIMPAN</button>
+                                    <button type="submit" class="btn btn-primary">SIMPAN</button>
                                 </div>
                         </form>
                     </div>

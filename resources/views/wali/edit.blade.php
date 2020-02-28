@@ -6,29 +6,27 @@
             <div class="col-md-10">
                 <div class="card">
                     <div class="card-header">
-                        Tambah Data Mahasiswa
+                        Tambah Data Wali
                     </div>
                     <div class="card-body">
-                        <form action="{{route('mahasiswa.store')}}" method="POST">
+                        <form action="{{route('wali.update', $wali->id)}}" method="POST">
                             @csrf
+                            @method('PUT')
+                                <div class="form-group">
+                                    <label for="">Nama Wali</label>
+                                    <input type="text" name="nama" value="{{$wali->nama}}" class="form-control" required>
+                                </div>
                                 <div class="form-group">
                                     <label for="">Nama Mahasiswa</label>
-                                    <input type="text" name="nama" class="form-control" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="">N I M</label>
-                                    <input type="number" name="nim" class="form-control" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="">Nama Dosen</label>
-                                    <select name="id_dosen" class="form-control" required>
-                                    @foreach ($dosen as $data)
+                                    <select name="id_mahasiswa" class="form-control" required>
+                                    @foreach ($mahasiswa as $data)
                                         <option value="{{$data->id}}">{{$data->nama}}</option>
                                     @endforeach
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-primary">SIMPAN</button>
+                                    <a href="{{url()->previous()}}" class="btn btn-primary">KEMBALI</a>
                                 </div>
                         </form>
                     </div>

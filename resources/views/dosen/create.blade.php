@@ -20,7 +20,7 @@
                                     <input type="text" name="nipd" class="form-control" required>
                                 </div>
                                 <div class="form-group">
-                                    <button type="submit" class="btn-btn-primary">SIMPAN</button>
+                                    <button type="submit" class="btn btn-primary">SIMPAN</button>
                                 </div>
                         </form>
                     </div>

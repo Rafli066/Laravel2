@@ -81,6 +81,8 @@ Route::resource('hobi', 'HobiController');
 
 Route::resource('mahasiswa', 'MahasiswaController');
 
+Route::resource('wali', 'WaliController');
+
 
 
 
